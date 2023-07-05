@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RiichiMahjong.Exceptions;
 
 namespace RiichiMahjong
 {
@@ -119,7 +120,7 @@ namespace RiichiMahjong
                 return "0p";
             else if (tile == 0x125) // Red Five Sou
                 return "0s";
-            throw new TileNotFoundException("Tile not found or does not exist");
+            else throw new TileNotFoundException("Tile not found or does not exist");
         }
     }
 }
