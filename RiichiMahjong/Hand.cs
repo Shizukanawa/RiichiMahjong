@@ -8,5 +8,7 @@ namespace RiichiMahjong
 {
     internal class Hand
     {
+        
+
     }
 }

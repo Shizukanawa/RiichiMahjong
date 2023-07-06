@@ -28,9 +28,9 @@ namespace RiichiMahjong
             _isYakuman = isYakuman;
         }
 
-        public string name { get { return _name; } set { _name = value; } }
-        public int hanClosed { get { return _hanClosed; } set { _hanClosed = value; } }
-        public int hanOpen { get { return _hanOpen; } set { _hanOpen = value; } }
-        public bool isYakuman { get {  return _isYakuman; } set {_isYakuman = value; } }
+        public string name { get { return _name; } }
+        public int hanClosed { get { return _hanClosed; } }
+        public int hanOpen { get { return _hanOpen; } }
+        public bool isYakuman { get {  return _isYakuman; } }
     }
 }

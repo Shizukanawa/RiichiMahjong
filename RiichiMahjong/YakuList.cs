@@ -1,6 +1,7 @@
 ﻿using RiichiMahjong.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,9 +73,9 @@ namespace RiichiMahjong
             yakuList.Add(new Yaku("Chiihou", 13, 13, true));
 
             // Double Yakuman
-            yakuList.Add(new Yaku("13-wait Kokushi Musou", 26, 0, true));
+            yakuList.Add(new Yaku("13-Wait Kokushi Musou", 26, 0, true));
             yakuList.Add(new Yaku("Daisuushii", 26, 26, true));
-            yakuList.Add(new Yaku("9-wait Chuuren Poutou", 26, 26, true));
+            yakuList.Add(new Yaku("9-Wait Chuuren Poutou", 26, 26, true));
 
             // Special Yaku
             yakuList.Add(new Yaku("Nagashi Mangan", 5, 5, true));
@@ -89,11 +90,17 @@ namespace RiichiMahjong
             yakuList.Add(yaku);
         }
 
+        /// <summary>
+        /// Returns a specific yaku based on a string.
+        /// </summary>
+        /// <param name="yaku"></param>
+        /// <returns></returns>
+        /// <exception cref="YakuNotFoundException"></exception>
         public Yaku FindYakuByName(string yaku)
         {
             try
             {
-                return yakuList.Single(x => x.name == yaku);
+                return yakuList.Single(x => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(yaku) == x.name); // Makes sure that yaku is in Title Case, which is how the yakus are written.
             }
             catch (Exception)
             {
