@@ -70,7 +70,7 @@ namespace RiichiMahjong
         public List<Tile> Tiles { get { return _tiles; } }
 
         /// <summary>
-        /// Turns the numbers into strings when we need to generate wall code but also the wall itself.
+        /// Turns the numbers into strings when generating the wall code but also the wall itself.
         /// </summary>
         /// <param name="tile"></param>
         /// <returns></returns>
@@ -96,7 +96,7 @@ namespace RiichiMahjong
         }
 
         /// <summary>
-        /// Returns a tile in string form as an object Tile.
+        /// Returns a tile from string form to object Tile.
         /// </summary>
         /// <param name="tile"></param>
         /// <returns></returns>
