@@ -67,7 +67,7 @@ namespace RiichiMahjong
         /// <summary>
         /// Returns the list of tiles
         /// </summary>
-        public List<Tile> tiles { get { return _tiles; } }
+        public List<Tile> Tiles { get { return _tiles; } }
 
         /// <summary>
         /// Turns the numbers into strings when we need to generate wall code but also the wall itself.

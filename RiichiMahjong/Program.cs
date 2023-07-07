@@ -10,7 +10,7 @@ void GetWallAndCode()
         Wall wall = new Wall();
         Console.WriteLine(wall.WallCode());
         YakuList yakuList = new YakuList();
-        Console.WriteLine(yakuList.FindYakuByName("13-wait kokushi musou").hanOpen);
+        Console.WriteLine(yakuList.FindYakuByName("13-wait kokushi musou").HanOpen);
         Console.WriteLine("Press any key to close...");
         Console.ReadKey();
     }

@@ -9,20 +9,30 @@ namespace RiichiMahjong
 {
     internal class Tile
     {
-        private int _value;
+        private int _number;
         private string _suit;
         
         public Tile(int value, string suit)
         {
-            _value = value;
+            _number = value;
             _suit = suit;
         }
 
-        public int value { get { return _value; } }
-        public string suit { get { return _suit; } }
+        /// <summary>
+        /// Returns which number the tile is.
+        /// </summary>
+        public int Number { get { return _number; } }
+        /// <summary>
+        /// Returns which suit the tile is.
+        /// </summary>
+        public string Suit { get { return _suit; } }
+        /// <summary>
+        /// Returns the tile in string format.
+        /// </summary>
+        /// <returns></returns>
         public string TileCode()
         {
-            return _value.ToString() + _suit;
+            return _number.ToString() + _suit;
         }
     }
 }

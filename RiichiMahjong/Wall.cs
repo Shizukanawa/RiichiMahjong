@@ -9,7 +9,7 @@ namespace RiichiMahjong
 {
     internal class Wall
     {
-        private List<string> _randomizedWall = new List<string>();
+        private List<string> _wall = new List<string>();
         private string _wallCode = string.Empty;
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace RiichiMahjong
         {
             GenerateWallAndCode();
         }
-        public List<string> RandomizeWall() { return _randomizedWall; }
+        public List<string> GetWall() { return _wall; }
         public string WallCode() { return _wallCode; }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace RiichiMahjong
         {
             Random random = new Random();
             TileList tileList = new TileList();
-            List<Tile> newTiles = tileList.tiles;
+            List<Tile> newTiles = tileList.Tiles;
 
             int i = newTiles.Count;
             while (i > 1) // Shuffles the list
@@ -46,7 +46,7 @@ namespace RiichiMahjong
             {
                 string tile = newTiles[index].TileCode(); // Get the specific tile as a string
                 char newSuit = tile[1]; // Add the suit for comparison later
-                _randomizedWall.Add(tile); // Add the tile to the list
+                _wall.Add(tile); // Add the tile to the list
 
                 if (suit != newSuit) // Now we compare the suit with the previous ones, if they are the same then we wait adding the suit to the wall code until they're done.
                 {

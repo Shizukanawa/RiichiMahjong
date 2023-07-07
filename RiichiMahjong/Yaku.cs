@@ -27,10 +27,21 @@ namespace RiichiMahjong
             _hanClosed = hanClosed;
             _isYakuman = isYakuman;
         }
-
-        public string name { get { return _name; } }
-        public int hanClosed { get { return _hanClosed; } }
-        public int hanOpen { get { return _hanOpen; } }
-        public bool isYakuman { get {  return _isYakuman; } }
+        /// <summary>
+        /// Returns the name of the yaku.
+        /// </summary>
+        public string Name { get { return _name; } }
+        /// <summary>
+        /// Returns the amount of han when the hand is closed.
+        /// </summary>
+        public int HanClosed { get { return _hanClosed; } }
+        /// <summary>
+        /// Returns the amount of han when the hand is open.
+        /// </summary>
+        public int HanOpen { get { return _hanOpen; } }
+        /// <summary>
+        /// Returns whether or not the specific yaku is a yakuman.
+        /// </summary>
+        public bool IsYakuman { get {  return _isYakuman; } }
     }
 }
