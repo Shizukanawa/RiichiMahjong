@@ -30,7 +30,7 @@ namespace RiichiMahjong
         }
 
         /// <summary>
-        /// Drawing a tile here literally means setting the tsumogiri (the tile you just drew) as a paremeter.
+        /// Sets the tsumogiri variable to the given tile.
         /// </summary>
         /// <param name="tile"></param>
         public void DrawTile(Tile tile)
@@ -97,7 +97,6 @@ namespace RiichiMahjong
             else if (tile1.Number > tile2.Number)
                 return -1; // Return tile1 if the number is lower than tile2.
             else return 1; // Return tile2 if the number is lower than tile1.
-
         }
     }
 }

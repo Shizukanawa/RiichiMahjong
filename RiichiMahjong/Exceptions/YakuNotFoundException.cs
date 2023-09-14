@@ -10,8 +10,8 @@ namespace RiichiMahjong.Exceptions
     {
         public YakuNotFoundException() { }
 
-        public YakuNotFoundException(string message)
-            : base(message) { }
+        public YakuNotFoundException(string yakuName)
+            : base($"Yaku not found: {yakuName}") { }
 
         public YakuNotFoundException(string message, Exception inner)
             : base(message, inner) { }

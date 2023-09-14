@@ -111,7 +111,7 @@ namespace RiichiMahjong
             }
             catch (Exception)
             {
-                throw new YakuNotFoundException("Yaku not found.");
+                throw new YakuNotFoundException(yaku);
             }
         }
     }
