@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiichiMahjong
 {
-    internal class Yaku
+    public class Yaku
     {
         private string _name;
         private int _hanClosed;

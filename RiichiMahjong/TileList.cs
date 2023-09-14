@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RiichiMahjong
 {
-    internal class TileList
+    public class TileList
     {
         private int[] _standardTiles = new int[136]
         {

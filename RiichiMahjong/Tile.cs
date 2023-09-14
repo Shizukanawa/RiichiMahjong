@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace RiichiMahjong
 {
-    internal class Tile
+    public class Tile
     {
         private int _number;
         private string _suit;
-        
+
         public Tile(int value, string suit)
         {
             _number = value;

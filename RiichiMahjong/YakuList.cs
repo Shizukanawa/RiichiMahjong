@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RiichiMahjong
 {
-    internal class YakuList
+    public class YakuList
     {
         private List<Yaku> _yakuList = new List<Yaku>();
 

@@ -7,7 +7,7 @@ using RiichiMahjong.Exceptions;
 
 namespace RiichiMahjong
 {
-    internal class Wall
+    public class Wall
     {
         private List<string> _wall = new List<string>();
         private string _wallCode = string.Empty;
