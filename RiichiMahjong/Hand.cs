@@ -73,7 +73,7 @@ namespace RiichiMahjong
             for (int index = 0; index < length; index++)
             {
                 string newSuit = _hand[index].Suit;
-                if (suit != newSuit) // Now we compare the suit with the previous ones, if they are the same then we wait adding the suit to the wall code until they're done.
+                if (suit != newSuit) // Now we compare the suit with the previous ones, if they are the same then we wait adding the suit to the hand code until they're done.
                 {
                     if (suit != string.Empty)
                     {
@@ -85,7 +85,7 @@ namespace RiichiMahjong
                 }
                 handCode += _hand[index].Number;
             }
-            handCode += suit; // Add the remaining suit to the wall code
+            handCode += suit; // Add the remaining suit to the hand code
             
             return handCode;
         }
