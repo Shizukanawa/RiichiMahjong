@@ -102,8 +102,6 @@ namespace RiichiMahjong
         /// <returns></returns>
         public Tile ToTile(string tile)
         {
-            string x = tile.Substring(0, 1);
-            string d = tile.Substring(1, 1);
             return new Tile(int.Parse(tile.Substring(0, 1)), tile.Substring(1, 1));
         }
     }

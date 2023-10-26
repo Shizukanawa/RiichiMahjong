@@ -19,7 +19,7 @@ namespace RiichiMahjong.Tests
         [InlineData(2, "p", "2p")]
         [InlineData(3, "s", "3s")]
         [InlineData(4, "z", "4z")]
-        public void Tile_TileCode_ReturnsCorrectFormat(int value, string suit, string expected)
+        public void Tile_TileCode_ReturnsCorrectString(int value, string suit, string expected)
         {
             var tile = new Tile(value, suit);
 

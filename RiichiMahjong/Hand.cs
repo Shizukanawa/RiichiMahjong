@@ -18,7 +18,7 @@ namespace RiichiMahjong
         private Seat _seat = Seat.None;
 
         /// <summary>
-        /// Sets the hand 
+        /// Sets the hand.
         /// </summary>
         /// <param name="hand"></param>
         public Hand(List<Tile> hand)
