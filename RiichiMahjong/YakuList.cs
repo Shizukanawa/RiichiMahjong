@@ -40,7 +40,7 @@ namespace RiichiMahjong
             // 2 Han with closed hand
             _yakuList.Add(new Yaku("Double Riichi", 2, 0, false));
             _yakuList.Add(new Yaku("Chanta", 2, 1, false));
-            _yakuList.Add(new Yaku("Shanshoku Doujun", 2, 1, false));
+            _yakuList.Add(new Yaku("Sanshoku Doujun", 2, 1, false));
             _yakuList.Add(new Yaku("Ittsu", 2, 1, false));
             _yakuList.Add(new Yaku("Toitoi", 2, 2, false));
             _yakuList.Add(new Yaku("Sanankou", 2, 2, false));
@@ -67,18 +67,18 @@ namespace RiichiMahjong
             _yakuList.Add(new Yaku("Tsuuiisou", 13, 13, true));
             _yakuList.Add(new Yaku("Chinroutou", 13, 13, true));
             _yakuList.Add(new Yaku("Ryuuiisou", 13, 13, true));
-            _yakuList.Add(new Yaku("Chuuren Poutou", 13, 13, true));
+            _yakuList.Add(new Yaku("Chuuren Poutou", 13, 0, true));
             _yakuList.Add(new Yaku("Suukantsu", 13, 13, true));
-            _yakuList.Add(new Yaku("Tenhou", 13, 13, true));
-            _yakuList.Add(new Yaku("Chiihou", 13, 13, true));
+            _yakuList.Add(new Yaku("Tenhou", 13, 0, true));
+            _yakuList.Add(new Yaku("Chiihou", 13, 0, true));
             
             // Double Yakuman
             _yakuList.Add(new Yaku("13-Wait Kokushi Musou", 26, 0, true));
             _yakuList.Add(new Yaku("Daisuushii", 26, 26, true));
-            _yakuList.Add(new Yaku("9-Wait Chuuren Poutou", 26, 26, true));
+            _yakuList.Add(new Yaku("9-Wait Chuuren Poutou", 26, 0, true));
             
             // Special Yaku
-            _yakuList.Add(new Yaku("Nagashi Mangan", 5, 5, true));
+            _yakuList.Add(new Yaku("Nagashi Mangan", 5, 5, false));
         }
 
         /// <summary>
