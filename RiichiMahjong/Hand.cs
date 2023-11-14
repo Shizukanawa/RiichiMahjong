@@ -38,6 +38,33 @@ namespace RiichiMahjong
             _tsumogiri = tile;
         }
 
+        public void DiscardTile(Tile tile)
+        {
+            try
+            {
+                if (_hand.Any(item => item.Number == tile.Number && item.Suit == tile.Suit)) //Checks if the tile in the parameter is actually in the hand.
+                {
+                    _hand.Remove(tile);
+                    _hand.Add(_tsumogiri);
+                    _hand.Sort(SortTiles);
+                    _tsumogiri = null;
+                }
+                else
+                {
+                    throw new TileNotFoundException("Tile not found in list.");
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (TileNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
         public void CallChii(Tile tile)
         {
             //TODO

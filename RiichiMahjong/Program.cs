@@ -29,6 +29,11 @@ void GetWallAndCode()
         Hand hand = new Hand(tiles);
         Console.WriteLine(hand.HandCode());
 
+        hand.DrawTile(new Tile(1, "z"));
+        hand.DiscardTile(tiles[2]);
+
+        Console.WriteLine(hand.HandCode());
+
         Console.WriteLine("Press any key to close...");
         Console.ReadKey();
     }
