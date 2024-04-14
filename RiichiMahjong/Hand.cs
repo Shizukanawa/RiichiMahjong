@@ -42,7 +42,7 @@ namespace RiichiMahjong
         {
             try
             {
-                if (Object.ReferenceEquals(_tsumogiri, tile)) //If the selected tile is the tsumogiri.
+                if (_tsumogiri != null && Object.ReferenceEquals(_tsumogiri, tile)) //If the selected tile is the tsumogiri.
                 {
                     _tsumogiri = null;
                 }
