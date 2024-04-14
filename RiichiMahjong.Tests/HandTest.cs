@@ -55,7 +55,7 @@ namespace RiichiMahjong.Tests
         }
 
         [Fact]
-        public void Hand_DiscardTile_MakesTsumogiriNull()
+        public void Hand_DiscardTile_DiscardsTheTsumogiri()
         {
             List<Tile> tiles = new List<Tile>();
             tiles.Add(new Tile(1, "z"));
@@ -73,7 +73,7 @@ namespace RiichiMahjong.Tests
             tiles.Add(new Tile(1, "s"));
             Hand hand = new Hand(tiles);
 
-            hand.DrawTile(new Tile(1, "z"));
+            hand.DrawTile(new Tile(2, "z"));
             Tile tsumogiri = hand.GetTsumogiri();
             hand.DiscardTile(tsumogiri);
             var result = hand.HandCode();
