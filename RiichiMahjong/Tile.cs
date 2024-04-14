@@ -34,5 +34,14 @@ namespace RiichiMahjong
         {
             return _number.ToString() + _suit;
         }
+
+        /// <summary>
+        /// Returns the tile in a string format.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return _number.ToString() + _suit;
+        }
     }
 }

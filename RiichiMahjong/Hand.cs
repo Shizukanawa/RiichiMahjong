@@ -42,7 +42,11 @@ namespace RiichiMahjong
         {
             try
             {
-                if (_hand.Any(item => item.Number == tile.Number && item.Suit == tile.Suit)) //Checks if the tile in the parameter is actually in the hand.
+                if (Object.ReferenceEquals(_tsumogiri, tile)) //If the selected tile is the tsumogiri.
+                {
+                    _tsumogiri = null;
+                }
+                else if (_hand.Any(item => item.Number == tile.Number && item.Suit == tile.Suit) && _tsumogiri != null) //Checks if the tile in the parameter is actually in the hand.
                 {
                     _hand.Remove(tile);
                     _hand.Add(_tsumogiri);
@@ -84,6 +88,27 @@ namespace RiichiMahjong
         public void SetSeat(Seat seat)
         {
             _seat = seat;
+        }
+
+        public Tile GetTsumogiri()
+        {
+            try
+            {
+                if (_tsumogiri != null)
+                    return _tsumogiri;
+                else
+                    throw new TileNotFoundException("Tsumogiri tile not found.");
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (TileNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            throw new TileNotFoundException("Tsumogiri tile not found.");
         }
 
         /// <summary>

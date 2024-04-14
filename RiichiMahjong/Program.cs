@@ -30,7 +30,11 @@ void GetWallAndCode()
         Console.WriteLine(hand.HandCode());
 
         hand.DrawTile(new Tile(1, "z"));
-        hand.DiscardTile(tiles[2]);
+        Tile tsumogiri = hand.GetTsumogiri();
+        Console.WriteLine(tsumogiri.ToString());
+        hand.DiscardTile(tsumogiri);
+
+        //hand.DiscardTile(tiles[2]);
 
         Console.WriteLine(hand.HandCode());
 

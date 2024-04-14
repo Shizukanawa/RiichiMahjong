@@ -53,5 +53,32 @@ namespace RiichiMahjong.Tests
 
             result.Should().Be("111m1111p1111s11z");
         }
+
+        [Fact]
+        public void Hand_DiscardTile_MakesTsumogiriNull()
+        {
+            List<Tile> tiles = new List<Tile>();
+            tiles.Add(new Tile(1, "z"));
+            tiles.Add(new Tile(1, "m"));
+            tiles.Add(new Tile(1, "m"));
+            tiles.Add(new Tile(1, "m"));
+            tiles.Add(new Tile(1, "m"));
+            tiles.Add(new Tile(1, "p"));
+            tiles.Add(new Tile(1, "p"));
+            tiles.Add(new Tile(1, "p"));
+            tiles.Add(new Tile(1, "p"));
+            tiles.Add(new Tile(1, "s"));
+            tiles.Add(new Tile(1, "s"));
+            tiles.Add(new Tile(1, "s"));
+            tiles.Add(new Tile(1, "s"));
+            Hand hand = new Hand(tiles);
+
+            hand.DrawTile(new Tile(1, "z"));
+            Tile tsumogiri = hand.GetTsumogiri();
+            hand.DiscardTile(tsumogiri);
+            var result = hand.HandCode();
+
+            result.Should().Be("1111m1111p1111s1z");
+        }
     }
 }
