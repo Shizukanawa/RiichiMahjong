@@ -9,7 +9,7 @@ namespace RiichiMahjong
 {
     public class Wall
     {
-        private List<string> _wall = new List<string>();
+        private List<Tile> _wall = new List<Tile>();
         private string _wallCode = string.Empty;
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace RiichiMahjong
         {
             GenerateWallAndCode();
         }
-        public List<string> GetWall() { return _wall; }
+        public List<Tile> GetWall() { return _wall; }
         public string WallCode() { return _wallCode; }
 
         /// <summary>
@@ -29,28 +29,36 @@ namespace RiichiMahjong
         {
             Random random = new Random();
             TileList tileList = new TileList();
-            List<Tile> newTiles = tileList.Tiles;
+            _wall = tileList.Tiles;
 
-            int i = newTiles.Count;
+            int i = _wall.Count;
             while (i > 1) // Shuffles the list
             {
                 int j = random.Next(i--);
-                Tile temp = newTiles[i];
-                newTiles[i] = newTiles[j];
-                newTiles[j] = temp;
+                Tile temp = _wall[i];
+                _wall[i] = _wall[j];
+                _wall[j] = temp;
             }
+            GenerateWallCode();
+        }
 
-            char suit = '\0'; // Make suit to null as we don't know what the first suit is
-            int length = newTiles.Count;
+        /// <summary>
+        /// Generates the wall code based on the wall.
+        /// </summary>
+        private void GenerateWallCode()
+        {
+            _wallCode = string.Empty; // Make sure string is empty in case it gets called again.
+            string suit = "\0"; // Make suit to null as we don't know what the first suit is
+            int length = _wall.Count;
             for (int index = 0; index < length; index++)
             {
-                string tile = newTiles[index].TileCode(); // Get the specific tile as a string
-                char newSuit = tile[1]; // Add the suit for comparison later
+                Tile tile = _wall[index]; // Get the specific tile as a string
+                string newSuit = tile.Suit; // Add the suit for comparison later
                 _wall.Add(tile); // Add the tile to the list
 
                 if (suit != newSuit) // Now we compare the suit with the previous ones, if they are the same then we wait adding the suit to the wall code until they're done.
                 {
-                    if (suit != '\0')
+                    if (suit != "\0")
                     {
                         _wallCode += suit;
                         suit = newSuit;
@@ -58,9 +66,29 @@ namespace RiichiMahjong
                     else
                         suit = newSuit;
                 }
-                _wallCode += tile[0];
+                _wallCode += tile.Number;
             }
-            _wallCode += newTiles[135].TileCode()[1]; // Add the remaining suit to the wall code
+            _wallCode += _wall[_wall.Count - 1].Suit; // Add the remaining suit to the wall code.
+        }
+
+        public void ReadWallCode(string wallCode)
+        {
+            int numberPointer = 0, letterPointer = 0;
+            _wall.Clear(); // If wall contains stuff, reset it.
+            while (letterPointer < wallCode.Length)
+            {
+                if (char.IsLetter(wallCode[letterPointer])) // Checks if the pointer is on a letter.
+                {
+                    while(numberPointer < letterPointer)
+                    {
+                        _wall.Add(new Tile(int.Parse(wallCode[numberPointer].ToString()), wallCode[letterPointer].ToString()));
+                        numberPointer++;
+                    }
+                    numberPointer++;
+                }
+                ++letterPointer;
+            }
+            GenerateWallCode(); // Could just replace the string but this feels more safe.
         }
     }
 }

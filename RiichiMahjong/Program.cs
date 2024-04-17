@@ -8,6 +8,7 @@ void GetWallAndCode()
     try
     {
         Wall wall = new Wall();
+        //wall.ReadWallCode("275s5p6229m4p9s");
         Console.WriteLine(wall.WallCode());
         YakuList yakuList = new YakuList();
         Console.WriteLine(yakuList.FindYakuByName("13-wait kokushi musou").HanOpen);
